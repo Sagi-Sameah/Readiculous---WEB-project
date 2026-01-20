@@ -1,0 +1,235 @@
+.book-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10rem;
+    /margin: 2rem auto;/
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    border-radius: 5px;
+}
+
+#bookName {
+    color: #000;
+    font-size: 1.8em;
+    margin-bottom: 1px;
+    margin-top: 0;
+}
+
+.book-details {
+    flex: 1;
+    font-size: 1.1em;
+}
+
+.book-image img {
+    max-width: 200px;
+    height: auto;
+    border-radius: 3px;
+}
+
+.property-title {
+    color: #79CDF1;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+#stars-container, #userRatingStars {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    margin: 1px;
+}
+
+.stars-container {
+    display: flex;
+    justify-content: center; /* Center the stars horizontally */
+    align-items: center;
+}
+
+.star {
+    color: gray;
+    font-size: 34px;
+    margin: 0 2px;
+    position: relative;
+}
+
+.star.full {
+    color: gold;
+}
+
+.star.half::before {
+    content: '\u2605';
+    color: gold;
+    position: absolute;
+    width: 50%;
+    overflow: hidden;
+    display: inline-block;
+}
+
+.star.half {
+    color: gray; /* Ensure the half star's base is gray */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content {
+    margin: 0;
+    padding: 20px;
+    border: none;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#userRatingStars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#stars-container .star, #userRatingStars .star {
+    font-size: 2em;
+    color: gold;
+    margin: 0 2px;
+}
+
+#userRatingStars .star {
+    color: gray;
+    cursor: pointer;
+}
+
+#userRatingStars .star:hover, #userRatingStars .star:hover ~ .star {
+    color: gold;
+}
+
+.rate-button-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-right: 200px;
+}
+
+.rate-button-container button {
+    background-color: #79CDF1;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.comment-section {
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    border-radius: 5px;
+    text-align: right;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-section h3 {
+    margin-bottom: 0.5rem;
+
+}
+
+.comment-section textarea {
+    width: 90%;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.character-count {
+    margin-bottom: 1rem;
+}
+
+#commentInput {
+    width: 90%;
+    height: 50px;
+    padding: 5px;
+}
+
+.character-count {
+    text-align: right;
+    font-size: 1.1em;
+    color: gray;
+    margin-bottom: 10px;
+}
+
+#postCommentButton {
+    background-color: #9533D2;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#postCommentButton:hover {
+    background-color: #6c2499;
+}
+
+.comment {
+    width: 90%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.edit-button, .delete-button {
+    background-color: transparent;
+    border: none;
+    color: #9533D2;
+    cursor: pointer;
+    font-size: 0.9em;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.delete-button {
+    right: 70px;
+}

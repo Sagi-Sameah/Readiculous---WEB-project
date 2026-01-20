@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Login' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('login_bp.static', filename='css/login.css') }}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Inter&family=Inknut+Antiqua:wght@400;700&display=swap"
+          rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <h2 class="subtitle">המקום לאנשים שאוהבים ספרים</h2>
+        <div class="login-box">
+            <form id="loginForm" method="POST" action="{{ url_for('login_bp.submit') }}">
+                <div class="form-group">
+                    <label for="email">כתובת דוא"ל:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">סיסמא:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">התחברות</button>
+            </form>
+            <div id="errorModal" class="modal" role="alertdialog" aria-labelledby="modalMessage" aria-hidden="true">
+                <div class="modal-content">
+                    <span id="closeModal" class="close" role="button" tabindex="0">&times;</span>
+                    <p id="modalMessage"></p>
+                </div>
+            </div>
+        </div>
+        <p class="register-prompt">עוד לא רשום? <a href="{{ url_for('register_bp.register') }}" class="register-link">הירשם
+            כאן</a></p>
+        <div class="quote-section">
+            <img src="{{ url_for('static', filename='media/open book gif.gif') }}" alt="Open Book">
+            <p class="quote">“The more that you read, the more you will know. The more you will know, the more places
+                you'll go”<br>
+                Dr. Seuss -</p>
+        </div>
+    </main>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('login_bp.static', filename='js/login.js') }}"></script>
+{% endblock %}

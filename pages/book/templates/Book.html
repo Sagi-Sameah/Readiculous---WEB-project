@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = book.bookName %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Book.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Inter&family=Inknut+Antiqua:wght@400;700&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+<main>
+    <div class="content-container">
+        <div class="book-container">
+            <div class="book-details">
+                <h2 id="bookName">{{ book.bookName }}</h2>
+                <p><span class="property-title">מחבר:</span> <span id="author">{{ book.author }}</span></p>
+                <p><span class="property-title">מוציא לאור:</span> <span id="publisher">{{ book.publisher }}</span></p>
+                <p><span class="property-title">שנה:</span> <span id="year">{{ book.year }}</span></p>
+                <p><span class="property-title">ז'אנר:</span> <span id="genre">{{ book.genre }}</span></p>
+                <p><span class="property-title">עמודים:</span> <span id="pages">{{ book.pages }}</span></p>
+                <p>
+                    <span class="property-title">דירוג:</span>
+                    <span id="rating">{{ book.rating }}</span>
+                    <span id="stars-container"></span>
+                    <span id="ratersCount">({{ book.raters_count }} מדרגים)</span>
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                </p>
+                <div class="rate-button-container">
+                    <form method="POST" action="{{ url_for('book_bp.book_details', book_id=book._id) }}">
+                        <input type="hidden" name="rating" id="ratingInput">
+                        <button type="submit" id="rateButton">דרג את הספר</button>
+                    </form>
+                </div>
+            </div>
+            <div class="book-image">
+                <img src="{{ url_for('static', filename=book.image_url) }}" alt="{{ book.bookName }}">
+            </div>
+        </div>
+        <div class="comment-section">
+            <h3>תגובות</h3>
+            <form method="POST" action="{{ url_for('book_bp.book_details', book_id=book._id) }}">
+                <textarea id="commentInput" name="comment" placeholder="הוסף תגובה חדשה..." maxlength="300"></textarea>
+                <div class="character-count">0/300</div>
+                <input type="hidden" name="timestamp" value="{{ now }}">
+                <button type="submit">פרסם תגובה</button>
+            </form>
+            <div id="commentsContainer">
+                {% for comment in book.comments %}
+                    <div class="comment">
+                        <p>{{ comment.user_id }}: {{ comment.comment }}</p>
+                        <p><small>{{ comment.timestamp }}</small></p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</main>
+<div id="ratingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeRatingModal">&times;</span>
+        <h2>בחר דירוג:</h2>
+        <div id="userRatingStars" class="stars-container">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('static', filename='js/Book.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'About' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}"/>
+{% endblock %}
+
+{% block main %}
+    <h1>About Readiculous</h1>
+    <p>This is an example about us page</p>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}

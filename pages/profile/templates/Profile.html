@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Profile' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('profile_bp.static', filename='css/Profile.css') }}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Inter&family=Inknut+Antiqua:wght@400;700&display=swap"
+          rel="stylesheet">
+{% endblock %}
+
+{% block main %}
+    <main>
+        <div class="profile-container">
+            <div class="profile-content">
+                <div class="genres-authors-section">
+                    <button class="update-button" id="updateGenres">הז'אנרים שלי</button>
+                    <div id="selectedGenresContainer">הז'אנרים שלי: {{ user['selected_genres']|join(', ') }}</div>
+                    <button class="update-button" id="updateAuthors">הסופרים שלי</button>
+                    <div id="selectedAuthorsContainer">הסופרים שלי: {{ user['selected_authors']|join(', ') }}</div>
+                </div>
+                <div class="personal-info-section">
+                    <div class="profile-info-vertical">
+                        <form id="profileForm" method="post" action="{{ url_for('profile_bp.update_profile') }}">
+                            <div class="profile-info">
+                                <div>
+                                    <label for="firstName">שם פרטי:</label>
+                                    <input type="text" id="firstName" name="first_name" value="{{ user['first_name'] }}"
+                                           disabled>
+                                </div>
+                                <div>
+                                    <label for="lastName">שם משפחה:</label>
+                                    <input type="text" id="lastName" name="last_name" value="{{ user['last_name'] }}"
+                                           disabled>
+                                </div>
+                                <div>
+                                    <label for="phone">טלפון:</label>
+                                    <input type="text" id="phone" name="phone" value="{{ user['phone'] }}" disabled>
+                                </div>
+                                <div>
+                                    <label for="birthDate">תאריך לידה:</label>
+                                    <input type="text" id="birthDate" name="birthdate" value="{{ user['birthdate'] }}"
+                                           disabled>
+                                </div>
+                                <div>
+                                    <label for="gender">מין:</label>
+                                    <select id="gender" name="gender" disabled>
+                                        <option value="male" {% if user['gender'] == 'male' %}selected{% endif %}>זכר
+                                        </option>
+                                        <option value="female" {% if user['gender'] == 'female' %}selected{% endif %}>
+                                            נקבה
+                                        </option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="password">סיסמא:</label>
+                                    <input type="password" id="password" name="password" value="{{ user['password'] }}"
+                                           disabled>
+                                    <input type="checkbox" id="showPassword" style="display: none;">
+                                    <label for="showPassword" id="showPasswordLabel" style="display: none;">הצג
+                                        סיסמא</label>
+                                </div>
+                            </div>
+                            <input type="hidden" id="selectedGenres" name="selected_genres"
+                                   value="{{ user['selected_genres']|join(',') }}">
+                            <input type="hidden" id="selectedAuthors" name="selected_authors"
+                                   value="{{ user['selected_authors']|join(',') }}">
+                            <button type="button" id="editPersonalInfoButton" class="editPersonalInfo">עדכון פרטים
+                                אישיים
+                            </button>
+                            <button type="submit" id="savePersonalInfoButton" class="editPersonalInfo"
+                                    style="display: none;">שמור
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div id="genresPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close close-popup" id="closeGenresPopup">&times;</span>
+                    <h3>בחר/י את הז'אנרים המועדפים עלייך</h3>
+                    <h4>ניתן לבחור עד 5 אפשרויות</h4>
+                    <ul id="genresOptions" class="popup-options"></ul>
+                    <p id="genresErrorMsg" class="error-message"></p>
+                    <button class="ok-button" id="saveGenres">אישור</button>
+                </div>
+            </div>
+            <div id="authorsPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close close-popup" id="closeAuthorsPopup">&times;</span>
+                    <h3>בחר/י את הסופרים/ות המועדפים עלייך</h3>
+                    <h4>ניתן לבחור עד 5 אפשרויות</h4>
+                    <ul id="authorsOptions" class="popup-options"></ul>
+                    <p id="authorsErrorMsg" class="error-message"></p>
+                    <button class="ok-button" id="saveAuthors">אישור</button>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block page_body_js %}
+    <script src="{{ url_for('profile_bp.static', filename='js/Profile.js') }}"></script>
+{% endblock %}

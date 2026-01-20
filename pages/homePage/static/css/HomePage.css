@@ -1,0 +1,257 @@
+.quote-section {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+}
+
+.quote {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 1.2rem;
+    /*margin-top: 1rem;*/
+}
+
+.body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.search-container {
+    width: 80%;
+    text-align: center;
+}
+
+#searchBox {
+    width: 500px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f0f0f0;
+    /*margin: 0 auto;*/
+}
+
+#searchBox::placeholder {
+    color: #ccc;
+}
+
+.recommended-books {
+    width: 50%;
+    text-align: center;
+    margin: 20px auto;
+    padding: 5px 5px 50px 5px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.book-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.4s ease-in-out;
+    width: calc((100% + 100px) * 6);
+}
+
+.book-slide {
+    min-width: 33.33%;
+    flex: 0 0 calc(33.33% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -88px;
+}
+
+.book-slide img {
+    max-width: 120px;
+    max-height: 180px;
+    border-radius: 5px;
+}
+
+.carousel-nav {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-nav:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+    left: 560px;
+}
+
+.next {
+    right: 560px;
+}
+
+.fun-fact-section {
+    position: fixed;
+    top: 35%;
+    left: 0;
+    width: 200px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inknut Antiqua', serif;
+}
+
+.fun-fact-section h2 {
+    font-size: 1.5rem;
+    color: #79CDF1;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.fun-fact-section p {
+    font-size: 1.3rem;
+    transition: opacity 1s ease-out;
+    opacity: 1;
+}
+
+.filters-section {
+    position: fixed;
+    top: 7%;
+    right: 0;
+    bottom: 5%;
+    width: 300px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Inknut Antiqua', serif;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.filters-section h2 {
+    color: #79CDF1;
+    margin-top: 1px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 8px;
+}
+
+.filter-checkbox-list {
+    background-color: white;
+    max-height: 110px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 15px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 1.1rem;
+    margin-bottom: 1px;
+}
+
+.filter-group input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.filter-group.year-group {
+    display: flex;
+    align-items: center;
+}
+
+.filter-group.year-group input[type="number"] {
+    margin-left: 25px;
+    width: 75px;
+}
+
+.filter-group.year-group label[for="yearMax"] {
+    margin-left: 25px;
+}
+
+.filter-group select, .filter-group input[type="range"] {
+    width: 40%;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+.filter-group output {
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-left: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.filter-group.pages-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.filter-group.pages-group input[type="number"] {
+    margin-left: 25px;
+    width: 75px;
+}
+
+.filter-group.pages-group label {
+    margin-left: 25px;
+}
+
+@media screen and (max-width: 1068px) {
+    .fun-fact-section, .filters-section {
+        position: static;
+        width: auto;
+        margin: 10px;
+    }
+}
