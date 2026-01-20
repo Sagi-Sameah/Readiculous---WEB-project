@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page_head_title|default('Base') }}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Istok+Web&family=Inter&family=Inknut+Antiqua:wght@400;700&display=swap" rel="stylesheet">
+    {% block page_head_css %}{% endblock %}
+</head>
+<body>
+{% include('header.html') %}
+<main>
+    {% block main %}
+    {% endblock %}
+</main>
+{% include('footer.html') %}
+{% block page_body_js %}
+{% endblock %}
+</body>
+</html>
