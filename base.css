@@ -1,0 +1,103 @@
+@import "variables.css";
+
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #79CDF1;
+    text-align: right;
+    margin: 0;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #79CDF1;
+    align-items: center;
+    height: 1rem;
+}
+
+nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1.main-title {
+    color: #79CDF1;
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'Istok Web', sans-serif;
+    margin-top: 25px;
+    margin-bottom: 2px;
+    position: fixed;
+    top: 25px;
+    width: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Ensure content starts at the top */
+    align-items: center; /* Center content horizontally */
+    padding-top: 30px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #79CDF1;
+    text-align: center;
+    padding: 0;
+}
+
+.footer p {
+    margin: 0;
+    color: white;
+    font-size: 1rem;
+}
+
+.trademark {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+a[href] {
+    color: var(--link-color);
+}
+
+a[href]:visited {
+    color: var(--visited-link-color);
+}
+
+a[href]:active {
+    color: var(--active-link-color);
+}
