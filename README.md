@@ -1,23 +1,53 @@
-Welcome to our website - Readiculous!
-Readiculous is a platform designed for book lovers - to explore new books, discuss, rate them and receive personal recommendations.
-Our mission is to create social network that connects people through their love of books.
+# 📚 Readiculous
 
-Our project consists of HTML, CSS and JS files, designed for providing the users the best experience they can get.
+**A web-based platform for book lovers — focused on discovery, interaction, and personal experience.**
 
-General overview of the website:
-The name of the website 'Readiculous' is presented in every page, as well as the navigation bar for the users comfort to navigate through the website's pages.
-There's also the Readiculous trademake at the bottom of each page, and in some of the pages an occasional quote from a famoues author.
+![Readiculous Preview](./assets/readiculous-preview.png)
 
-Breakdown of the website's pages:
+---
 
-Registration page - This is the first page a new user sees. In this page the user needs to enter their data (email, first and last name, a birthdate and a password).
-The system validates the data the the user entered (for example a birthdate can't be before 1900 or after 2021) and if all the entered data is valid - a new user is created and they are redirected to the home page.
+## Overview
 
-Home page - In the home page the user is introduced to the recommended books the website has found for them, according to their perferences. They can easily toggle through the books with a right and left arrow. When clicking on a book icon, the user is redirected to the book's page (detailed below).
+Readiculous is a web application designed to connect readers with books and with each other.
+The platform allows users to explore books, manage personal profiles, and receive recommendations, while emphasizing clarity, structure, and usability.
 
-Login page - In this page the user is requested to enter an email address and a password (which must contain at least 8 characters, one capitalcase letter, one lowercase). They also have the option to be redirected to the registration page, in case they're a new user.
+This project was developed as part of my B.Sc. studies, with an emphasis on building a complete and coherent web system — from backend logic to user-facing experience.
 
-Book page - In this page users can receive info regarding the book they clicked on. It contains info regarding the author, publisher, publishing year, genre, pages, overall rating of the book (rated by the users of the website), number of ratings the book received and they also have the option to rate the book by themselves (1-5 stars).
+---
 
-Profile - In this page the user can update their details. They can re-choose their favorite authors and genres of books. They can update their data in the website as well (only works when pressing first on the 'עדכון' button).
+## Why this project
+
+Not every project is about using the most advanced tools.
+This one was about designing a **working, understandable, and maintainable system**.
+
+The goal was to:
+- Translate an idea into a functional web product
+- Design clear flows for users
+- Structure backend logic in a way that reflects real-world systems
+
+---
+
+## Main Features
+
+- User registration and authentication
+- Book browsing and navigation
+- Personal user profiles
+- Recommendation logic based on user interaction
+- Structured routing and backend logic
+- Separation between presentation, logic, and data
+
+---
+
+## Tech Stack
+
+- Backend: Python (Flask)
+- Frontend: HTML, CSS, JavaScript
+- Database: SQLite
+- Architecture: MVC-inspired structure
+
+---
+
+## Project Structure
+
+The project is organized to separate concerns and keep the codebase readable:
 
