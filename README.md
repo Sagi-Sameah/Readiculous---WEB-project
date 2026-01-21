@@ -50,4 +50,24 @@ The goal was to:
 ## Project Structure
 
 The project is organized to separate concerns and keep the codebase readable:
+app.py
+templates/
+static/
+routes/
+models/
+services/
+
+---
+
+## Project Status
+
+Completed — academic project with a practical, system-oriented approach.
+
+---
+
+## Notes
+
+This repository focuses on clarity and structure rather than exhaustive features.
+The emphasis was on building a solid foundation that reflects real development practices.
+
 
